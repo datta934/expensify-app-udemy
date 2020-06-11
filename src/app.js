@@ -9,7 +9,8 @@ import { setTextFilter } from './actions/filters'
 import getVisibleExpenses from './selectors/expenses'
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
-
+import LoadingPage from './components/LoadingPage';
+import './firebase/firebase';
 // const Layout = (props) => {
 //     return (
 //         <div>
@@ -39,6 +40,13 @@ const jsx = (
         <AppRouter />
     </Provider>
 );
+let hasRendered = false;
+const renderApp = () => {
+    if (!hasRendered) {
+        ReactDOM.render(jsx, document.getElementById('app'));
+        hasRendered = true;
+    }
+};
 
 ReactDOM.render(jsx, document.getElementById('app'));
 

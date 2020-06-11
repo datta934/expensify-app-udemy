@@ -45,8 +45,8 @@ const renderOptionLength = () => {
             <h1>{app.title}</h1>
             <h6>{app.subtitle}</h6>
             <p>{app.options.length > 0 ? 'Here are the options' : 'No options'} </p>
-            <button disabled={app.options.length === 0} onClick={onMakeDecision}>What should I do?</button>
-            <button onClick={onRemoveAll}>RemoveAll</button>
+            <button class="button"disabled={app.options.length === 0} onClick={onMakeDecision}>What should I do?</button>
+            <button class="button"onClick={onRemoveAll}>RemoveAll</button>
 
 
             {/* Arrays example */}

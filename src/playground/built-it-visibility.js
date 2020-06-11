@@ -1,5 +1,5 @@
 class Visibility extends React.Component {
-    constructor(props) {
+    constructor (props) {
         super(props);
         this.handletoggleVisibility = this.handletoggleVisibility.bind(this);
         this.state = {
@@ -20,16 +20,16 @@ class Visibility extends React.Component {
 
                 <div>
                     <h1>Visibility Toggle</h1>
-                    <button onClick={this.handletoggleVisibility}>
-                        {this.state.visibility ? 'Hide Details' : 'Show Details'}
+                    <button class="button" onClick={ this.handletoggleVisibility }>
+                        { this.state.visibility ? 'Hide Details' : 'Show Details' }
                     </button>
-                    {this.state.visibility && (
+                    { this.state.visibility && (
                         <p>Details</p>
-                    )}
+                    ) }
                 </div>
 
                 {/* <h1>Toggle Visibility</h1>
-                <button onClick={this.toggleVisibility}>Toggle</button> */}
+                <button class="button"onClick={this.toggleVisibility}>Toggle</button> */}
             </div>
         )
     }

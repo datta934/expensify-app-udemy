@@ -2,7 +2,7 @@
 //Using component state
 
 class Counter extends React.Component {
-    constructor(props) {
+    constructor (props) {
         super(props);
         this.handleAddOne = this.handleAddOne.bind(this);
         this.handleMinus = this.handleAddOne.bind(this);
@@ -58,10 +58,10 @@ class Counter extends React.Component {
     render() {
         return (
             <div>
-                <h1>Count: {this.state.count}</h1>
-                <button onClick={this.handleAddOne}>+1</button>
-                <button onClick={this.handleMinusOne}>-1</button>
-                <button onClick={this.handleReset}>reset</button>
+                <h1>Count: { this.state.count }</h1>
+                <button class="button" onClick={ this.handleAddOne }>+1</button>
+                <button class="button" onClick={ this.handleMinusOne }>-1</button>
+                <button class="button" onClick={ this.handleReset }>reset</button>
             </div>
         );
     }
@@ -69,7 +69,7 @@ class Counter extends React.Component {
 // Counter.defaultProps = {
 //     count: 0
 // }
-ReactDOM.render(<Counter count={-10} />, document.getElementById('app'));
+ReactDOM.render(<Counter count={ -10 } />, document.getElementById('app'));
 
 //Create three methods: handleAddOne,handleMinusOne, handleReset
 
@@ -111,10 +111,10 @@ ReactDOM.render(<Counter count={-10} />, document.getElementById('app'));
 //         <div>
 //             <h1>Count: {count}</h1>
 //             {/* short way */}
-//             {/* <button onClick={() => console.log("hi")} id="{temp}" className="button">+1</button> */}
-//             <button onClick={addOne}>+1</button>
-//             <button onClick={minuOne}>-1</button>
-//             <button onClick={reset}>reset</button>
+//             {/* <button class="button"onClick={() => console.log("hi")} id="{temp}" className="button">+1</button> */}
+//             <button class="button"onClick={addOne}>+1</button>
+//             <button class="button"onClick={minuOne}>-1</button>
+//             <button class="button"onClick={reset}>reset</button>
 //         </div>
 //     )
 

@@ -1,5 +1,5 @@
 class IndecisionApp extends React.Component {
-    constructor(props) {
+    constructor (props) {
         super(props);
         this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
         this.handlePick = this.handlePick.bind(this);
@@ -59,18 +59,18 @@ class IndecisionApp extends React.Component {
 
         return (
             <div>
-                <Header subtitle={subtitle} />
+                <Header subtitle={ subtitle } />
                 <Action
-                    hasOptions={this.state.options.length > 0}
-                    handlePick={this.handlePick}
+                    hasOptions={ this.state.options.length > 0 }
+                    handlePick={ this.handlePick }
                 />
                 <Options
-                    options={this.state.options}
-                    handleDeleteOptions={this.handleDeleteOptions}
-                    handleDeleteOption={this.handleDeleteOption}
+                    options={ this.state.options }
+                    handleDeleteOptions={ this.handleDeleteOptions }
+                    handleDeleteOption={ this.handleDeleteOption }
                 />
                 <AddOption
-                    handleAddOption={this.handleAddOption}
+                    handleAddOption={ this.handleAddOption }
                 />
             </div>
         );
@@ -84,8 +84,8 @@ IndecisionApp.defaultProps = {
 const Header = (props) => {
     return (
         <div>
-            <h1>{props.title}</h1>
-            {props.subtitle && <h2>{props.subtitle}</h2>}
+            <h1>{ props.title }</h1>
+            { props.subtitle && <h2>{ props.subtitle }</h2> }
         </div>
     );
 };
@@ -98,8 +98,8 @@ const Action = (props) => {
     return (
         <div>
             <button
-                onClick={props.handlePick}
-                disabled={!props.hasOptions}
+                onClick={ props.handlePick }
+                disabled={ !props.hasOptions }
             >
                 What should I do?
         </button>
@@ -110,14 +110,14 @@ const Action = (props) => {
 const Options = (props) => {
     return (
         <div>
-            <button onClick={props.handleDeleteOptions}>Remove All</button>
-            {props.options.length === 0 && <p>Please add an option to get started!</p>}
+            <button class="button" onClick={ props.handleDeleteOptions }>Remove All</button>
+            { props.options.length === 0 && <p>Please add an option to get started!</p> }
             {
                 props.options.map((option) => (
                     <Option
-                        key={option}
-                        optionText={option}
-                        handleDeleteOption={props.handleDeleteOption}
+                        key={ option }
+                        optionText={ option }
+                        handleDeleteOption={ props.handleDeleteOption }
                     />
                 ))
             }
@@ -128,11 +128,11 @@ const Options = (props) => {
 const Option = (props) => {
     return (
         <div>
-            {props.optionText}
+            { props.optionText }
             <button
-                onClick={(e) => {
+                onClick={ (e) => {
                     props.handleDeleteOption(props.optionText);
-                }}
+                } }
             >
                 remove
         </button>
@@ -141,7 +141,7 @@ const Option = (props) => {
 };
 
 class AddOption extends React.Component {
-    constructor(props) {
+    constructor (props) {
         super(props);
         this.handleAddOption = this.handleAddOption.bind(this);
         this.state = {
@@ -163,8 +163,8 @@ class AddOption extends React.Component {
     render() {
         return (
             <div>
-                {this.state.error && <p>{this.state.error}</p>}
-                <form onSubmit={this.handleAddOption}>
+                { this.state.error && <p>{ this.state.error }</p> }
+                <form onSubmit={ this.handleAddOption }>
                     <input type="text" name="option" />
                     <button>Add Option</button>
                 </form>
